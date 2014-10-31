@@ -1,7 +1,21 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.8.RELEASE")
+    }
+}
+
+
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'spring-boot'
 
-
+jar {
+    baseName = 'gravahal'
+    version = '1.0'
+}
 
 sourceCompatibility = 1.5
 version = '1.0'

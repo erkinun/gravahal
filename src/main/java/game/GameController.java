@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GameController {
 
-
-    @RequestMapping("/")
+    @RequestMapping("game")
     public String index(){
         return "hello gravahal game";
     }

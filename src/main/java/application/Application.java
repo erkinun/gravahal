@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan(basePackages = "game")
+@ComponentScan(basePackages = "web")
 public class Application {
 
     public static void main(String[] args) {

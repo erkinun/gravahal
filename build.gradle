@@ -12,11 +12,14 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
 
 jar {
     baseName = 'gravahal'
     version = '1.0'
 }
+
+checkstyle.configFile = new File("config/checkstyle.xml")
 
 sourceCompatibility = 1.5
 version = '1.0'

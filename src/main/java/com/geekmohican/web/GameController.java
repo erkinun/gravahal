@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class GameController {
 
     @RequestMapping("game")
-    public String index(){
+    public String index() {
         return "hello gravahal game";
     }
 }

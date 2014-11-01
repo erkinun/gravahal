@@ -1,4 +1,4 @@
-package web;
+package com.geekmohican.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

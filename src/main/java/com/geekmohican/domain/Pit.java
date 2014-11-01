@@ -1,4 +1,4 @@
-package domain;
+package com.geekmohican.domain;
 
 /**
  * Created by ERKIN on 01/11/14.

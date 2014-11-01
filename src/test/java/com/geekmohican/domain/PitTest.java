@@ -1,4 +1,4 @@
-package domain;
+package com.geekmohican.domain;
 
 
 import junit.framework.Assert;

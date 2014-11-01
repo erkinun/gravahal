@@ -1,4 +1,4 @@
-package application;
+package com.geekmohican.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan(basePackages = "web")
+@ComponentScan(basePackages = "com.geekmohican.web")
 public class Application {
 
     public static void main(String[] args) {

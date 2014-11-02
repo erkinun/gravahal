@@ -7,21 +7,28 @@ import com.geekmohican.game.Constants;
  */
 public class Pit {
 
-    private int number;
+    private int count;
 
     public Pit() {
-        number = Constants.PIT_STONE_COUNT;
+        count = Constants.PIT_STONE_COUNT;
     }
 
-    public int getNumber() {
-        return number;
+    public int getStoneCount() {
+        return count;
     }
 
     public void addStone() {
-        number += 1;
+        count += 1;
     }
 
-    public void removeStones() {
-        number = 0;
+    public int removeStones() {
+        int current = this.count;
+        this.count = 0;
+
+        return current;
+    }
+
+    public void addStones(int stones) {
+        count += stones;
     }
 }

@@ -10,7 +10,7 @@ public class PitTest {
 
         Pit pit = new Pit();
 
-        Assert.assertEquals(6, pit.getNumber());
+        Assert.assertEquals(6, pit.getStoneCount());
 
     }
 
@@ -19,7 +19,7 @@ public class PitTest {
         Pit pit = new Pit();
 
         pit.addStone();
-        Assert.assertEquals(7, pit.getNumber());
+        Assert.assertEquals(7, pit.getStoneCount());
     }
 
     @org.junit.Test
@@ -28,6 +28,6 @@ public class PitTest {
         Pit pit = new Pit();
 
         pit.removeStones();
-        Assert.assertEquals(0, pit.getNumber());
+        Assert.assertEquals(0, pit.getStoneCount());
     }
 }

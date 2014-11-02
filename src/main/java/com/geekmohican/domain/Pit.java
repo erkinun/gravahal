@@ -13,6 +13,10 @@ public class Pit {
         count = Constants.PIT_STONE_COUNT;
     }
 
+    public Pit(int count) {
+        this.count = count;
+    }
+
     public int getStoneCount() {
         return count;
     }

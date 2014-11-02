@@ -46,4 +46,26 @@ public enum PlayerInfo {
             }
         }
     }
+
+    public void isValidMove(int index) {
+        if (this.equals(PLAYER_1)) {
+            if (!(index >= 0 && index < 6)) {
+                throw new IllegalArgumentException(index + " is not a valid move for PLAYER 1");
+            }
+        }
+        else {
+            if (!(index >= 7 && index < 13)) {
+                throw new IllegalArgumentException(index + " is not a valid move for PLAYER 2");
+            }
+        }
+    }
+
+    public int getOpponentGravaIndex() {
+        if (this.equals(PLAYER_1)) {
+            return Constants.PLAYER_2_GRAVA;
+        }
+        else {
+            return Constants.PLAYER_1_GRAVA;
+        }
+    }
 }

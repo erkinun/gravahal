@@ -11,6 +11,15 @@ public class Board {
 
     public Board() {
         pits = new Pit[Constants.TOTAL_PIT_COUNT];
+
+        for (int i = 0; i < Constants.TOTAL_PIT_COUNT; i++) {
+            if (i == Constants.PLAYER_1_GRAVA || i == Constants.PLAYER_2_GRAVA) {
+                pits[i] = new Pit(0);
+            }
+            else {
+                pits[i] = new Pit();
+            }
+        }
     }
 
     public int getGravaStones(PlayerInfo info) {
@@ -19,7 +28,9 @@ public class Board {
 
     public int moveStones(int index, PlayerInfo playerInfo) {
 
-        int opponentGravaIndex = playerInfo.getGravaIndex();
+        playerInfo.isValidMove(index);
+
+        int opponentGravaIndex = playerInfo.getOpponentGravaIndex();
 
         int stoneCount = pits[index].removeStones();
 

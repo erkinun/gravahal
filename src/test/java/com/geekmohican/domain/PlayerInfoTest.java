@@ -94,4 +94,32 @@ public class PlayerInfoTest {
 
         Assert.assertEquals(who, PlayerInfo.PLAYER_2);
     }
+
+    @Test
+    public void isValidMove() {
+        PlayerInfo info = PlayerInfo.PLAYER_1;
+
+        info.isValidMove(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isNotValidMove() {
+        PlayerInfo info = PlayerInfo.PLAYER_1;
+
+        info.isValidMove(7);
+    }
+
+    @Test
+    public void isValidMoveFor2() {
+        PlayerInfo info = PlayerInfo.PLAYER_2;
+
+        info.isValidMove(7);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void isNotValidMoveFor2() {
+        PlayerInfo info = PlayerInfo.PLAYER_2;
+
+        info.isValidMove(2);
+    }
 }

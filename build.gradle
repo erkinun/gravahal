@@ -21,7 +21,6 @@ jar {
 
 checkstyle.configFile = new File("config/checkstyle.xml")
 
-sourceCompatibility = 1.5
 version = '1.0'
 
 repositories {

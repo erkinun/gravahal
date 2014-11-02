@@ -1,7 +1,7 @@
 package com.geekmohican.domain;
 
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class PitTest {
 

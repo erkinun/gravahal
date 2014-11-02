@@ -8,15 +8,13 @@ import com.geekmohican.game.Constants;
 public class Board {
 
     private Pit[] pits;
-    private GravaHal gravaHalPit;
 
     public Board() {
         pits = new Pit[Constants.TOTAL_PIT_COUNT];
-        gravaHalPit = new GravaHal();
     }
 
-    public int getGravaStones() {
-        return gravaHalPit.getStoneCount();
+    public int getGravaStones(PlayerInfo info) {
+        return pits[info.getGravaIndex()].getStoneCount();
     }
 
     public int moveStones(int index, PlayerInfo playerInfo) {

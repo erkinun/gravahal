@@ -29,4 +29,12 @@ public class GameState {
         //who will play next
         playerInfo = board.whoWillPlayNext(playerInfo, lastStep);
     }
+
+    public boolean isGameOver() {
+        return gameOver;
+    }
+
+    public PlayerInfo getPlayerInfo() {
+        return playerInfo;
+    }
 }

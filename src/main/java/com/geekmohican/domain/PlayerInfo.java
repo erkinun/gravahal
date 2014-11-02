@@ -27,6 +27,13 @@ public enum PlayerInfo {
         return 6 + diff;
     }
 
+    @Override
+    public String toString() {
+        return "PlayerInfo{"
+                + "turn=" + turn
+                + ", gravaIndex=" + gravaIndex
+                + '}';
+    }
 
     public PlayerInfo whoWillPlay(int lastStep) {
         if (this.equals(PLAYER_1)) {

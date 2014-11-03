@@ -83,10 +83,6 @@ public class Board {
         return pits[step].getStoneCount() == 1; //meaning before last stone, it was empty
     }
 
-    private int findGrava(PlayerInfo playerTurn) {
-        return playerTurn.getGravaIndex();
-    }
-
     public boolean isGameOver(PlayerInfo playerTurn) {
         int begin, end;
         if (playerTurn.equals(PlayerInfo.PLAYER_1)) {

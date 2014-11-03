@@ -13,7 +13,9 @@
 
 <div>
     <ul>
-        <li th:each="pit : ${game.getBoard()}" th:text="${pit.toString()}">pit1</li>
+        <li th:each="pit : ${game.getBoard()}" th:object="${pit}">
+            <div>stones: <span th:text="*{getStoneCount()}">number</span></div>
+        </li>
     </ul>
 </div>
 

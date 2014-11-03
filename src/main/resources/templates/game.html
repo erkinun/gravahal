@@ -5,19 +5,28 @@
     <title>Gravahal Game</title>
 </head>
 <body>
-<h1>This will be a game page!</h1>
+<h1>This is your game page!</h1>
 
 <div>Game Status: <span th:text="${game.isGameOver()}">status</span></div>
 
 <div>Game Board</div>
+<h3>Click on a radio and then click the Play! button</h3>
+<form action="play" method="post" th:object="${move}">
+    <div>
+        <ul>
+            <li th:each="pit, iter : ${game.getBoard()}" th:object="${pit}">
+                <div>
+                    <span th:text="*{getType()}"></span> number: <span th:text="${iter.index}">num</span>
+                    stones: <span th:text="*{getStoneCount()}">number</span>
+                    <input th:field="${move.index}" type="radio" value="not_set" th:attr="value=${iter.index}"/>
+                </div>
+            </li>
+        </ul>
+    </div>
 
-<div>
-    <ul>
-        <li th:each="pit : ${game.getBoard()}" th:object="${pit}">
-            <div>stones: <span th:text="*{getStoneCount()}">number</span></div>
-        </li>
-    </ul>
-</div>
+    <input type="submit" value="Play!"/>
+
+</form>
 
 <div>Next User: <span th:text="${game.getPlayerInfo()}">erkin</span></div>
 

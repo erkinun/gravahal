@@ -7,5 +7,6 @@ import com.geekmohican.domain.GameState;
  */
 public interface GameService {
     GameState startNewGame();
+    GameState move(int index, GameState state);
 
 }

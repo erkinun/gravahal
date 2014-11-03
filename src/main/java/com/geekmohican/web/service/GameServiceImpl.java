@@ -13,4 +13,11 @@ public class GameServiceImpl implements GameService {
     public GameState startNewGame() {
         return new GameState(new Board());
     }
+
+    public GameState move(int index, GameState state) {
+
+        state.move(index);
+
+        return state;
+    }
 }

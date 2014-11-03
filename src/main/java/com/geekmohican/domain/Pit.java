@@ -8,13 +8,22 @@ import com.geekmohican.game.Constants;
 public class Pit {
 
     private int count;
+    private PitType type;
 
     public Pit() {
         count = Constants.PIT_STONE_COUNT;
+        type = PitType.PIT;
     }
 
-    public Pit(int count) {
+    public Pit(int count, boolean grava) {
         this.count = count;
+
+        if (grava) {
+            type = PitType.GRAVA;
+        }
+        else {
+            type = PitType.PIT;
+        }
     }
 
     public int getStoneCount() {
@@ -42,4 +51,22 @@ public class Pit {
                 + "count=" + count
                 + '}';
     }
+
+    public String getType() {
+        return type.type;
+    }
+
+    private enum PitType {
+
+        PIT("Pit"),
+        GRAVA("Grava");
+
+        private String type;
+
+        PitType(String type) {
+            this.type = type;
+        }
+    }
+
+
 }

@@ -30,8 +30,13 @@ public class GameState {
         playerInfo = board.whoWillPlayNext(playerInfo, lastStep);
     }
 
-    public boolean isGameOver() {
-        return gameOver;
+    public String isGameOver() {
+        if (gameOver) {
+            return "Over";
+        }
+        else {
+            return "Playing";
+        }
     }
 
     public PlayerInfo getPlayerInfo() {

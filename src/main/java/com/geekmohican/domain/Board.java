@@ -14,7 +14,7 @@ public class Board {
 
         for (int i = 0; i < Constants.TOTAL_PIT_COUNT; i++) {
             if (i == Constants.PLAYER_1_GRAVA || i == Constants.PLAYER_2_GRAVA) {
-                pits[i] = new Pit(0);
+                pits[i] = new Pit(0, true);
             }
             else {
                 pits[i] = new Pit();

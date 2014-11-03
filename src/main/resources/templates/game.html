@@ -11,6 +11,12 @@
 
 <div>Game Board</div>
 
+<div>
+    <ul>
+        <li th:each="pit : ${game.getBoard()}" th:text="${pit.toString()}">pit1</li>
+    </ul>
+</div>
+
 <div>Next User: <span th:text="${game.getPlayerInfo()}">erkin</span></div>
 
 </body>

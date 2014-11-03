@@ -35,4 +35,11 @@ public class Pit {
     public void addStones(int stones) {
         count += stones;
     }
+
+    @Override
+    public String toString() {
+        return "Pit{"
+                + "count=" + count
+                + '}';
+    }
 }

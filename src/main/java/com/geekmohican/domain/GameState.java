@@ -37,4 +37,8 @@ public class GameState {
     public PlayerInfo getPlayerInfo() {
         return playerInfo;
     }
+
+    public Pit[] getBoard() {
+        return board.getPits();
+    }
 }

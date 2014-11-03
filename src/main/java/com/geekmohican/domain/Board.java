@@ -22,6 +22,10 @@ public class Board {
         }
     }
 
+    public Pit[] getPits() {
+        return pits.clone();
+    }
+
     public int getGravaStones(PlayerInfo info) {
         return pits[info.getGravaIndex()].getStoneCount();
     }

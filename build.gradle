@@ -13,6 +13,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
+apply plugin: 'jacoco'
 
 jar {
     baseName = 'gravahal'
@@ -20,6 +21,12 @@ jar {
 }
 
 checkstyle.configFile = new File("config/checkstyle.xml")
+
+jacocoTestReport {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports after running tests."
+    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+}
 
 version = '1.0'
 

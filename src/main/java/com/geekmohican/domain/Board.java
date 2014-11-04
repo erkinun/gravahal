@@ -114,4 +114,22 @@ public class Board {
     public boolean hasStones(int index) {
         return pits[index].getStoneCount() > 0;
     }
+
+    public PlayerInfo whoWins() {
+
+        int play1Stones = pits[Constants.PLAYER_1_GRAVA].getStoneCount();
+        int play2Stones = pits[Constants.PLAYER_2_GRAVA].getStoneCount();
+
+        int result = Integer.compare(play1Stones, play2Stones);
+
+        if (result > 0) {
+            return PlayerInfo.PLAYER_1;
+        }
+        else if (result < 0) {
+            return PlayerInfo.PLAYER_2;
+        }
+        else {
+            return PlayerInfo.PLAYER_DRAW;
+        }
+    }
 }

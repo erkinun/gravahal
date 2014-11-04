@@ -16,6 +16,7 @@ public class GameState {
     private PlayerInfo playerInfo;
     private boolean gameOver;
     private String message = GAME_OK;
+    private PlayerInfo whoWon;
 
     public GameState(Board board) {
         this.board = board;
@@ -36,6 +37,7 @@ public class GameState {
         gameOver = board.isGameOver(playerInfo);
 
         if (gameOver) {
+            this.whoWon = board.whoWins();
             return;
         }
 
@@ -83,5 +85,9 @@ public class GameState {
 
     public String getMessage() {
         return message;
+    }
+
+    public PlayerInfo getWhoWon() {
+        return whoWon;
     }
 }

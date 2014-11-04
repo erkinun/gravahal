@@ -7,6 +7,7 @@ import com.geekmohican.game.Constants;
  */
 public enum PlayerInfo {
 
+    PLAYER_DRAW(0, -1),
     PLAYER_1(1, Constants.PLAYER_1_GRAVA),
     PLAYER_2(2, Constants.PLAYER_2_GRAVA);
 

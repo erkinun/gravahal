@@ -55,4 +55,12 @@ public class BoardTest {
         int secondStep = board.moveStones(1, PlayerInfo.PLAYER_1);
         Assert.assertEquals(PlayerInfo.PLAYER_2, board.whoWillPlayNext(PlayerInfo.PLAYER_1, secondStep));
     }
+
+    @Test
+    public void whoWins() throws Exception {
+
+        PlayerInfo info = board.whoWins();
+
+        Assert.assertEquals(info, PlayerInfo.PLAYER_DRAW);
+    }
 }

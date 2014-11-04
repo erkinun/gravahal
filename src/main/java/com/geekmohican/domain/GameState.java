@@ -1,13 +1,20 @@
 package com.geekmohican.domain;
 
+import com.geekmohican.game.Constants;
+
 /**
  * Created by ERKIN on 02/11/14.
  */
 public class GameState {
 
+    private static final String GRAVA_ERROR = "You cannot move stones from gravahal";
+    private static final String OPPONENT_STONES = "You cannot move stones of your opponents";
+    private static final String GAME_OK = "Game is OK";
+
     private Board board;
     private PlayerInfo playerInfo;
     private boolean gameOver;
+    private String message = GAME_OK;
 
     public GameState(Board board) {
         this.board = board;
@@ -16,6 +23,11 @@ public class GameState {
     }
 
     public void move(int index) {
+
+        //validate move
+        if (!validateMove(index)) {
+            return;
+        }
 
         int lastStep = board.moveStones(index, playerInfo);
 
@@ -28,6 +40,20 @@ public class GameState {
 
         //who will play next
         playerInfo = board.whoWillPlayNext(playerInfo, lastStep);
+    }
+
+    private boolean validateMove(int index) {
+        if (index == Constants.PLAYER_1_GRAVA || index == Constants.PLAYER_2_GRAVA) {
+            this.message = GRAVA_ERROR;
+            return false;
+        }
+
+        if (!playerInfo.validateMove(index)) {
+            this.message = OPPONENT_STONES;
+            return false;
+        }
+
+        return true;
     }
 
     public String isGameOver() {
@@ -45,5 +71,9 @@ public class GameState {
 
     public Pit[] getBoard() {
         return board.getPits();
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

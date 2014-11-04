@@ -67,6 +67,21 @@ public enum PlayerInfo {
         }
     }
 
+    public boolean validateMove(int index) {
+        if (this.equals(PLAYER_1)) {
+            if (!(index >= 0 && index < 6)) {
+                return false;
+            }
+        }
+        else {
+            if (!(index >= 7 && index < 13)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public int getOpponentGravaIndex() {
         if (this.equals(PLAYER_1)) {
             return Constants.PLAYER_2_GRAVA;

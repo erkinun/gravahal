@@ -2,10 +2,12 @@ package com.geekmohican.domain;
 
 import com.geekmohican.game.Constants;
 
+import java.io.Serializable;
+
 /**
  * Created by ERKIN on 01/11/14.
  */
-public class Pit {
+public class Pit implements Serializable {
 
     private int count;
     private PitType type;

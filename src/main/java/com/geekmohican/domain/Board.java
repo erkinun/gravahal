@@ -2,10 +2,12 @@ package com.geekmohican.domain;
 
 import com.geekmohican.game.Constants;
 
+import java.io.Serializable;
+
 /**
  * Created by ERKIN on 01/11/14.
  */
-public class Board {
+public class Board implements Serializable {
 
     private Pit[] pits;
 

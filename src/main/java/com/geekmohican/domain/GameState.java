@@ -2,10 +2,12 @@ package com.geekmohican.domain;
 
 import com.geekmohican.game.Constants;
 
+import java.io.Serializable;
+
 /**
  * Created by ERKIN on 02/11/14.
  */
-public class GameState {
+public class GameState implements Serializable {
 
     private static final String GRAVA_ERROR = "You cannot move stones from gravahal";
     private static final String OPPONENT_STONES = "You cannot move stones of your opponents";

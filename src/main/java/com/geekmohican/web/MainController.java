@@ -26,7 +26,7 @@ public class MainController {
     @Autowired
     private GameService service;
 
-    @RequestMapping(value = "start", method = RequestMethod.GET)
+    @RequestMapping(value = { "start", "reset" }, method = RequestMethod.GET)
     public String start(Model model, HttpSession session) {
         GameState state = service.startNewGame();
 

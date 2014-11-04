@@ -49,4 +49,19 @@ public class GameController {
         model.addAttribute(MOVE, new Move());
         return VIEW;
     }
+
+    @RequestMapping(value = "play", method = RequestMethod.GET)
+    public String play(Model model, HttpSession session) {
+
+        GameState state = (GameState) session.getAttribute(GAME);
+
+        if (state == null) {
+            state = service.startNewGame();
+            session.setAttribute(GAME, state);
+        }
+
+        model.addAttribute(GAME, state);
+        model.addAttribute(MOVE, new Move());
+        return VIEW;
+    }
 }

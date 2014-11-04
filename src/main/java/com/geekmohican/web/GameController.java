@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
  * Created by ERKIN on 02/11/14.
  */
 @Controller
-public class MainController {
+public class GameController {
 
     private static final String GAME = "game";
     private static final String MOVE = "move";

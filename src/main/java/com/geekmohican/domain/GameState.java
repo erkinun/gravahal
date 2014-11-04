@@ -9,6 +9,7 @@ public class GameState {
 
     private static final String GRAVA_ERROR = "You cannot move stones from gravahal";
     private static final String OPPONENT_STONES = "You cannot move stones of your opponents";
+    private static final String NO_STONES_THERE = "There are no stones at the index";
     private static final String GAME_OK = "Game is OK";
 
     private Board board;
@@ -53,6 +54,13 @@ public class GameState {
             return false;
         }
 
+        if (!board.hasStones(index)) {
+            this.message = NO_STONES_THERE;
+            return false;
+        }
+
+
+        this.message = GAME_OK;
         return true;
     }
 

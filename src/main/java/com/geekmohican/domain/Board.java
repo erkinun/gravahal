@@ -110,4 +110,8 @@ public class Board {
     public PlayerInfo whoWillPlayNext(PlayerInfo playerInfo, int lastStep) {
         return playerInfo.whoWillPlay(lastStep);
     }
+
+    public boolean hasStones(int index) {
+        return pits[index].getStoneCount() > 0;
+    }
 }

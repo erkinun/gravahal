@@ -41,6 +41,7 @@ public class Board {
         int step = index;
         while (stoneCount > 0) {
             step++;
+            step = step % Constants.TOTAL_PIT_COUNT; // example you are at step 14, you need to go to index 0
 
             if (step == opponentGravaIndex) {
                 continue;

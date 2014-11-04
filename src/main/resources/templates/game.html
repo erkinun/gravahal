@@ -3,34 +3,53 @@
       xmlns:th="http://www.thymeleaf.org" >
 <head>
     <title>Gravahal Game</title>
+
+    <style>
+        #content{
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #EEEEEE;
+            border-radius: 3px;
+        }
+        #board {
+            border: 1px solid #BBBBBB;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
-<h1>This is your game page!</h1>
 
-<div>Game Status: <span th:text="${game.isGameOver()}">status</span></div>
-<div>Game Message: <span th:text="${game.getMessage()}">message</span></div>
+<div id="content">
+    <h1>This is your game page!</h1>
 
-<div>Game Board</div>
-<h3>Click on a radio button and then click the Play! button</h3>
-<form action="play" method="post" th:object="${move}">
-    <div>
-        <ul>
-            <li th:each="pit, iter : ${game.getBoard()}" th:object="${pit}">
-                <div>
-                    <span th:text="*{getType()}"></span> number: <span th:text="${iter.index}">num</span>
-                    stones: <span th:text="*{getStoneCount()}">number</span>
-                    <input th:field="${move.index}" type="radio" value="not_set" th:attr="value=${iter.index}"/>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <div>Game Status: <span th:text="${game.isGameOver()}">status</span></div>
+    <div>Game Message: <span th:text="${game.getMessage()}">message</span></div>
 
-    <input type="submit" value="Play!"/>
-    <p><a th:href="@{/reset}">Reset Game</a></p>
+    <div>Game Board</div>
+    <h3>Click on a radio button and then click the Play! button</h3>
+    <form action="play" method="post" th:object="${move}">
+        <div id="board">
+            <ul>
+                <li th:each="pit, iter : ${game.getBoard()}" th:object="${pit}">
+                    <div>
+                        <span th:text="*{getType()}"></span> number: <span th:text="${iter.index}">num</span>
+                        stones: <span th:text="*{getStoneCount()}">number</span>
+                        <input th:field="${move.index}" type="radio" value="not_set" th:attr="value=${iter.index}"/>
+                    </div>
+                </li>
+            </ul>
+            <br/>
+        </div>
 
-</form>
+        <input type="submit" value="Play!"/>
+        <p><a th:href="@{/reset}">Reset Game</a></p>
 
-<div>Next User: <span th:text="${game.getPlayerInfo()}">erkin</span></div>
+    </form>
+
+    <div>Next User: <span th:text="${game.getPlayerInfo()}">erkin</span></div>
+
+</div>
 
 </body>
 </html>
